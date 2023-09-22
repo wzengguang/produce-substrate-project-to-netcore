@@ -1,0 +1,42 @@
+sources\test\tools\src\SysMgmt\Internal.Exchange.Tools.SysMgmt.csproj
+$(INETROOT)\sources\dev\admin\src\DetailsTemplates\Microsoft.Exchange.Management.DetailsTemplates.csproj
+$(INETROOT)\sources\dev\admin\src\ManagementGUI\Microsoft.Exchange.ManagementGUI.csproj
+ $(INETROOT)\sources\dev\admin\src\MgmtGUI\Microsoft.ManagementGUI.csproj
+  $(INETROOT)\sources\dev\admin\src\systemmanager\SystemManager.csproj
+  $(INETROOT)\sources\dev\admin\src\ManagementGUI\Microsoft.Exchange.ManagementGUI.csproj
+   $(INETROOT)\sources\dev\admin\src\MgmtGUI\Microsoft.ManagementGUI.csproj
+ $(INETROOT)\sources\PartnerInternal\Mita\published\PartnerInternalMita.noproj
+  $(INETROOT)\sources\dev\admin\src\edge\Microsoft.Exchange.Management.Edge.SystemManager.csproj
+  $(INETROOT)\sources\dev\admin\src\ManagementGUI\Microsoft.Exchange.ManagementGUI.csproj
+   $(INETROOT)\sources\dev\admin\src\MgmtGUI\Microsoft.ManagementGUI.csproj
+    $(INETROOT)\sources\dev\admin\src\systemmanager\SystemManager.csproj
+    $(INETROOT)\sources\dev\admin\src\ManagementGUI\Microsoft.Exchange.ManagementGUI.csproj
+     $(INETROOT)\sources\dev\admin\src\MgmtGUI\Microsoft.ManagementGUI.csproj
+   $(INETROOT)\sources\dev\admin\src\MgmtGUI\Microsoft.ManagementGUI.csproj
+    $(INETROOT)\sources\dev\admin\src\snapin.esm\Microsoft.Exchange.Management.SnapIn.Esm.csproj
+    $(INETROOT)\sources\dev\admin\src\ManagementGUI\Microsoft.Exchange.ManagementGUI.csproj
+     $(INETROOT)\sources\dev\admin\src\MgmtGUI\Microsoft.ManagementGUI.csproj
+      $(INETROOT)\sources\dev\admin\src\systemmanager\SystemManager.csproj
+      $(INETROOT)\sources\dev\admin\src\ManagementGUI\Microsoft.Exchange.ManagementGUI.csproj
+       $(INETROOT)\sources\dev\admin\src\MgmtGUI\Microsoft.ManagementGUI.csproj
+     $(INETROOT)\sources\dev\admin\src\systemmanager\SystemManager.csproj
+     $(INETROOT)\sources\dev\admin\src\ManagementGUI\Microsoft.Exchange.ManagementGUI.csproj
+      $(INETROOT)\sources\dev\admin\src\MgmtGUI\Microsoft.ManagementGUI.csproj
+      $(INETROOT)\sources\test\tools\src\Common\CommonCore\Internal.Exchange.Test.CommonCore.csproj
+       $(INETROOT)\sources\test\tools\src\ExMaui\exmaui\ExMaui.csproj
+       $(INETROOT)\sources\dev\admin\src\systemmanager\SystemManager.csproj
+       $(INETROOT)\sources\dev\admin\src\ManagementGUI\Microsoft.Exchange.ManagementGUI.csproj
+        $(INETROOT)\sources\dev\admin\src\MgmtGUI\Microsoft.ManagementGUI.csproj
+        $(INETROOT)\sources\test\tools\src\Common\CommonCore\Internal.Exchange.Test.CommonCore.csproj
+         $(INETROOT)\sources\test\tools\src\ExMaui\SnapInTestHelper\Internal.Exchange.Test.ExMaui.SnapInTestHelper.csproj
+         $(INETROOT)\sources\dev\admin\src\MgmtGUI\Microsoft.ManagementGUI.csproj
+          $(INETROOT)\sources\dev\admin\src\systemmanager\SystemManager.csproj
+          $(INETROOT)\sources\dev\admin\src\ManagementGUI\Microsoft.Exchange.ManagementGUI.csproj
+           $(INETROOT)\sources\dev\admin\src\MgmtGUI\Microsoft.ManagementGUI.csproj
+        $(INETROOT)\sources\test\tools\src\ExMaui\SnapInTestHelper\Internal.Exchange.Test.ExMaui.SnapInTestHelper.csproj
+        $(INETROOT)\sources\dev\admin\src\MgmtGUI\Microsoft.ManagementGUI.csproj
+         $(INETROOT)\sources\dev\admin\src\systemmanager\SystemManager.csproj
+         $(INETROOT)\sources\dev\admin\src\ManagementGUI\Microsoft.Exchange.ManagementGUI.csproj
+          $(INETROOT)\sources\dev\admin\src\MgmtGUI\Microsoft.ManagementGUI.csproj
+         $(INETROOT)\sources\test\tools\src\ExMita\Internal.Exchange.Test.ExMita.csproj
+         $(INETROOT)\sources\PartnerInternal\Mita\published\PartnerInternalMita.noproj

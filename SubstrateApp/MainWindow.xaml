@@ -1,0 +1,22 @@
+﻿<Window x:Class="SubstrateApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SubstrateApp"
+        mc:Ignorable="d"
+        Title="SubstrateApp" Height="450" Width="800">
+    <Grid>
+        <Grid Width="200" HorizontalAlignment="Left">
+            <Menu>
+                <MenuItem Header="_Edit">
+                    <MenuItem Command="ApplicationCommands.Copy"/>
+                    <MenuItem Command="ApplicationCommands.Cut"/>
+                    <MenuItem Command="ApplicationCommands.Paste"/>
+                </MenuItem>
+            </Menu>
+        </Grid>
+
+        <Frame Name="frmMain" HorizontalAlignment="Left" Margin="200,0,0,0"></Frame>
+    </Grid>
+</Window>
