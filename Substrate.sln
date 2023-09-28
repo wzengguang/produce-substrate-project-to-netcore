@@ -5,7 +5,9 @@ VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{E7E9C996-229C-4668-8D0E-57382F01146E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SubstrateApp", "SubstrateApp\SubstrateApp.csproj", "{6E498459-4DD2-44D3-A02B-48B2CEEA814A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SubstrateApp", "SubstrateApp\SubstrateApp.csproj", "{6E498459-4DD2-44D3-A02B-48B2CEEA814A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SubstrateUtils", "SubstrateUtils\SubstrateUtils.csproj", "{389ABAFF-9899-4A33-9764-B0B5E4F903B1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{6E498459-4DD2-44D3-A02B-48B2CEEA814A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E498459-4DD2-44D3-A02B-48B2CEEA814A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E498459-4DD2-44D3-A02B-48B2CEEA814A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{389ABAFF-9899-4A33-9764-B0B5E4F903B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{389ABAFF-9899-4A33-9764-B0B5E4F903B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{389ABAFF-9899-4A33-9764-B0B5E4F903B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{389ABAFF-9899-4A33-9764-B0B5E4F903B1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

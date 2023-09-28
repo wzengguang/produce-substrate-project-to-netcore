@@ -1,28 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-
-namespace SubstrateApp.Pages
+﻿namespace SubstrateApp.Pages
 {
+    using System.Diagnostics;
+    using System.Windows;
+    using System.Windows.Controls;
+    using SubstrateApp.ViewModel;
+    using SubstrateUtils.ProduceAssembly;
+
     /// <summary>
     /// Interaction logic for ProduceAssemly.xaml
     /// </summary>
     public partial class ProduceAssemly : Page
     {
+        private ProduceAssemblyViewModel produceAssemblyViewModel;
         public ProduceAssemly()
         {
             InitializeComponent();
+            produceAssemblyViewModel = AppServiceProvider.GetService<ProduceAssemblyViewModel>();
+            DataContext = produceAssemblyViewModel;
+        }
+
+        private void Btn_Produce(object sender, RoutedEventArgs e)
+        {
+            produceAssemblyViewModel.Produce();
         }
     }
 }

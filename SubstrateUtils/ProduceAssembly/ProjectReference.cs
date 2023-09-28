@@ -1,27 +1,42 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Xml.Linq;
-
-namespace ConsoleApp
+﻿
+namespace SubstrateUtils.ProduceAssembly
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Text.RegularExpressions;
+    using System.Threading.Tasks;
+    using System.Xml.Linq;
+    using SubstrateUtils.Extensions;
+
     public class ProjectReference
     {
-        private string path = @"sources/test/Services/src/RestUnitTests/OfficeGraph/OfficeGraphInternal/OfficeGraphInternalUnitTests.csproj";
-
+        string path;
+        string rootPath;
         HashSet<string> Props;
 
-        public ProjectReference()
+        public ProjectReference(string rootPath, string path)
         {
+            this.path = path;
+            this.rootPath = rootPath;
             Props = GetPackageProps();
         }
 
-        public void Produce()
+        public string Produce()
         {
-            string physicPath = SubstratePath.Combine(path);
+            if (path == null)
+            {
+                return "path" + "not found.";
+            }
+
+            string physicPath = Path.Combine(rootPath, path);
+
+            if (!File.Exists(physicPath))
+            {
+                return "physicPath" + "not found.";
+            }
+
             XDocument doc = XDocument.Load(physicPath);
             XElement root = doc.Root;
             ToSDK(root);
@@ -29,6 +44,7 @@ namespace ConsoleApp
             ConvertReferenceToPackageReference(root);
             OrderPackageReference(root);
             ClearEmptyItemGroup(root);
+            RemoveNamespace(root);
             root.Save(physicPath);
 
             string[] strs = File.ReadAllLines(physicPath);
@@ -36,6 +52,17 @@ namespace ConsoleApp
             {
                 File.WriteAllLines(physicPath, strs.Skip(1));
             }
+
+            return File.ReadAllText(physicPath);
+        }
+
+        private static void RemoveNamespace(XElement element)
+        {
+            (from node in element.DescendantsAndSelf()
+             where node is XElement
+             from attr in node.Attributes()
+             where attr.IsNamespaceDeclaration && attr.Name.LocalName == "xmlns"
+             select attr).All(attr => { attr.Remove(); return true; });
         }
 
         public void ToSDK(XElement root)
@@ -167,7 +194,7 @@ namespace ConsoleApp
                 string includePath = pReference.Attribute("Include")?.Value;
                 if (includePath != null)
                 {
-                    string fullPath = SubstratePath.Combine(includePath.Replace("$(INETROOT)\\", string.Empty, StringComparison.OrdinalIgnoreCase));
+                    string fullPath = Path.Combine(rootPath, includePath.Replace("$(INETROOT)\\", string.Empty, StringComparison.OrdinalIgnoreCase));
 
                     var root = XDocument.Load(fullPath).Root;
                     var el = root.GetFirstChild("PropertyGroup");
@@ -287,7 +314,7 @@ namespace ConsoleApp
 
         private HashSet<string> GetPackageProps()
         {
-            string path = SubstratePath.Combine("Packages.props");
+            string path = Path.Combine(rootPath, "Packages.props");
             XElement root = XDocument.Load(path).Root;
             return root.GetDescendents(XmlConst.PackageVersion).Select(a => a.GetAttribute(XmlConst.Include)).ToHashSet(StringComparer.OrdinalIgnoreCase);
         }
@@ -303,7 +330,7 @@ namespace ConsoleApp
                 string includePath = projectReferenceElement.Attribute("Include")?.Value;
                 if (includePath != null)
                 {
-                    string fullPath = SubstratePath.Combine(includePath.ReplaceIgnoreCase("$(INETROOT)\\", string.Empty));
+                    string fullPath = Path.Combine(rootPath, includePath.ReplaceIgnoreCase("$(INETROOT)\\", string.Empty));
 
                     var propertyGroupElement = XDocument.Load(fullPath).Root.GetFirstChild("PropertyGroup");
                     string propertyGroupElementValue = propertyGroupElement?.Value;
